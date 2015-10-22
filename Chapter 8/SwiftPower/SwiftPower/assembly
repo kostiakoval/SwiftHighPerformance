@@ -1,0 +1,101 @@
+	.section	__TEXT,__text,regular,pure_instructions
+	.macosx_version_min 14, 4
+	.globl	_main
+	.align	4, 0x90
+_main:
+	.cfi_startproc
+	pushq	%rbp
+Ltmp0:
+	.cfi_def_cfa_offset 16
+Ltmp1:
+	.cfi_offset %rbp, -16
+	movq	%rsp, %rbp
+Ltmp2:
+	.cfi_def_cfa_register %rbp
+	subq	$48, %rsp
+	movq	_globalinit_33_1BDF70FFC18749BAB495A73B459ED2F0_token4@GOTPCREL(%rip), %rax
+	movq	_globalinit_33_1BDF70FFC18749BAB495A73B459ED2F0_func4@GOTPCREL(%rip), %rcx
+	xorl	%edx, %edx
+	movl	%edi, -28(%rbp)
+	movq	%rax, %rdi
+	movq	%rsi, -40(%rbp)
+	movq	%rcx, %rsi
+	callq	_swift_once
+	movq	_globalinit_33_1BDF70FFC18749BAB495A73B459ED2F0_token5@GOTPCREL(%rip), %rdi
+	movq	_globalinit_33_1BDF70FFC18749BAB495A73B459ED2F0_func5@GOTPCREL(%rip), %rax
+	xorl	%r8d, %r8d
+	movl	%r8d, %edx
+	movq	__TZvOSs7Process5_argcVSs5Int32@GOTPCREL(%rip), %rcx
+	movl	-28(%rbp), %r8d
+	movl	%r8d, (%rcx)
+	movq	%rax, %rsi
+	callq	_swift_once
+	leaq	L___unnamed_1(%rip), %rdi
+	movl	$11, %r8d
+	movl	%r8d, %esi
+	movl	$1, %edx
+	movq	__TZvOSs7Process11_unsafeArgvGVSs20UnsafeMutablePointerGS0_VSs4Int8__@GOTPCREL(%rip), %rax
+	movq	-40(%rbp), %rcx
+	movq	%rcx, (%rax)
+	callq	__TFSSCfMSSFT21_builtinStringLiteralBp8byteSizeBw7isASCIIBi1__SS
+	movq	__TMdSS@GOTPCREL(%rip), %rsi
+	addq	$8, %rsi
+	leaq	-24(%rbp), %rdi
+	movq	%rax, -24(%rbp)
+	movq	%rdx, -16(%rbp)
+	movq	%rcx, -8(%rbp)
+	callq	__TFSs7printlnU__FQ_T_
+	callq	__TF8assembly3byeFT_T_
+	xorl	%eax, %eax
+	addq	$48, %rsp
+	popq	%rbp
+	retq
+	.cfi_endproc
+
+	.private_extern	__TF8assembly3byeFT_T_
+	.globl	__TF8assembly3byeFT_T_
+	.align	4, 0x90
+
+:
+	.cfi_startproc
+	pushq	%rbp
+Ltmp3:
+	.cfi_def_cfa_offset 16
+Ltmp4:
+	.cfi_offset %rbp, -16
+	movq	%rsp, %rbp
+Ltmp5:
+	.cfi_def_cfa_register %rbp
+	subq	$32, %rsp
+	leaq	L___unnamed_2(%rip), %rdi
+	movl	$7, %eax
+	movl	%eax, %esi
+	movl	$1, %edx
+	callq	__TFSSCfMSSFT21_builtinStringLiteralBp8byteSizeBw7isASCIIBi1__SS
+	movq	__TMdSS@GOTPCREL(%rip), %rsi
+	addq	$8, %rsi
+	leaq	-24(%rbp), %rdi
+	movq	%rax, -24(%rbp)
+	movq	%rdx, -16(%rbp)
+	movq	%rcx, -8(%rbp)
+	callq	__TFSs7printlnU__FQ_T_
+	addq	$32, %rsp
+	popq	%rbp
+	retq
+	.cfi_endproc
+
+	.section	__TEXT,__cstring,cstring_literals
+L___unnamed_1:
+	.asciz	"Hello World"
+
+L___unnamed_2:
+	.asciz	"Bye bye"
+
+	.linker_option "-lswiftCore"
+	.section	__DATA,__objc_imageinfo,regular,no_dead_strip
+L_OBJC_IMAGE_INFO:
+	.long	0
+	.long	512
+
+
+.subsections_via_symbols

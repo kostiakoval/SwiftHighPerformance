@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' requires-full-environment='true' display-mode='raw'>
+    <pages>
+        <page name='TOC'/>
+        <page name='Before refactoring'/>
+        <page name='Split Data and Functions'/>
+        <page name='Async Operation'/>
+        <page name='Split calculation and Async'/>
+        <page name='Cache'/>
+        <page name='Hashable'/>
+        <page name='Final Result'/>
+    </pages>
+</playground>

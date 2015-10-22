@@ -1,0 +1,99 @@
+; ModuleID = 'ir'
+target datalayout = "e-m:o-i64:64-f80:128-n8:16:32:64-S128"
+target triple = "x86_64-apple-darwin14.4.0"
+
+%VSs5Int32 = type <{ i32 }>
+%VSs20UnsafeMutablePointer = type <{ i8* }>
+%swift.full_type = type { i8**, %swift.type }
+%swift.type = type { i64 }
+%SS = type <{ %VSs11_StringCore }>
+%VSs11_StringCore = type <{ %VSs14COpaquePointer, %Su, %Sq }>
+%VSs14COpaquePointer = type <{ i8* }>
+%Su = type <{ i64 }>
+%Sq = type <{ [8 x i8] }>
+%swift.refcounted = type { %swift.type*, i32, i32 }
+%swift.opaque = type opaque
+
+@globalinit_33_1BDF70FFC18749BAB495A73B459ED2F0_token4 = external global i64, align 8
+@_TZvOSs7Process5_argcVSs5Int32 = external global %VSs5Int32, align 4
+@globalinit_33_1BDF70FFC18749BAB495A73B459ED2F0_token5 = external global i64, align 8
+@_TZvOSs7Process11_unsafeArgvGVSs20UnsafeMutablePointerGS0_VSs4Int8__ = external global %VSs20UnsafeMutablePointer, align 8
+@0 = private unnamed_addr constant [12 x i8] c"Hello World\00"
+@_TMdSS = external global %swift.full_type
+@1 = private unnamed_addr constant [8 x i8] c"Bye bye\00"
+
+define i32 @main(i32, i8**) {
+entry:
+  %2 = alloca %SS, align 8
+  %3 = bitcast i8** %1 to i8*
+  call void @swift_once(i64* @globalinit_33_1BDF70FFC18749BAB495A73B459ED2F0_token4, i8* bitcast (void ()* @globalinit_33_1BDF70FFC18749BAB495A73B459ED2F0_func4 to i8*), %swift.refcounted* null)
+  store i32 %0, i32* getelementptr inbounds (%VSs5Int32* @_TZvOSs7Process5_argcVSs5Int32, i32 0, i32 0), align 4
+  call void @swift_once(i64* @globalinit_33_1BDF70FFC18749BAB495A73B459ED2F0_token5, i8* bitcast (void ()* @globalinit_33_1BDF70FFC18749BAB495A73B459ED2F0_func5 to i8*), %swift.refcounted* null)
+  store i8* %3, i8** getelementptr inbounds (%VSs20UnsafeMutablePointer* @_TZvOSs7Process11_unsafeArgvGVSs20UnsafeMutablePointerGS0_VSs4Int8__, i32 0, i32 0), align 8
+  %4 = call { i8*, i64, i64 } @_TFSSCfMSSFT21_builtinStringLiteralBp8byteSizeBw7isASCIIBi1__SS(i8* getelementptr inbounds ([12 x i8]* @0, i64 0, i64 0), i64 11, i1 true)
+  %5 = extractvalue { i8*, i64, i64 } %4, 0
+  %6 = extractvalue { i8*, i64, i64 } %4, 1
+  %7 = extractvalue { i8*, i64, i64 } %4, 2
+  %._core = getelementptr inbounds %SS* %2, i32 0, i32 0
+  %._core._baseAddress = getelementptr inbounds %VSs11_StringCore* %._core, i32 0, i32 0
+  %._core._baseAddress._rawValue = getelementptr inbounds %VSs14COpaquePointer* %._core._baseAddress, i32 0, i32 0
+  store i8* %5, i8** %._core._baseAddress._rawValue, align 8
+  %._core._countAndFlags = getelementptr inbounds %VSs11_StringCore* %._core, i32 0, i32 1
+  %._core._countAndFlags.value = getelementptr inbounds %Su* %._core._countAndFlags, i32 0, i32 0
+  store i64 %6, i64* %._core._countAndFlags.value, align 8
+  %._core._owner = getelementptr inbounds %VSs11_StringCore* %._core, i32 0, i32 2
+  %8 = bitcast %Sq* %._core._owner to i64*
+  store i64 %7, i64* %8, align 8
+  %9 = bitcast %SS* %2 to %swift.opaque*
+  call void @_TFSs7printlnU__FQ_T_(%swift.opaque* %9, %swift.type* getelementptr inbounds (%swift.full_type* @_TMdSS, i32 0, i32 1))
+  call void @_TF2ir3byeFT_T_()
+  ret i32 0
+}
+
+declare void @globalinit_33_1BDF70FFC18749BAB495A73B459ED2F0_func4()
+
+declare void @swift_once(i64*, i8*, %swift.refcounted*)
+
+declare void @globalinit_33_1BDF70FFC18749BAB495A73B459ED2F0_func5()
+
+; Function Attrs: noinline
+declare void @_TFSs7printlnU__FQ_T_(%swift.opaque*, %swift.type*) #0
+
+declare { i8*, i64, i64 } @_TFSSCfMSSFT21_builtinStringLiteralBp8byteSizeBw7isASCIIBi1__SS(i8*, i64, i1)
+
+define hidden void @_TF2ir3byeFT_T_() {
+entry:
+  %0 = alloca %SS, align 8
+  %1 = call { i8*, i64, i64 } @_TFSSCfMSSFT21_builtinStringLiteralBp8byteSizeBw7isASCIIBi1__SS(i8* getelementptr inbounds ([8 x i8]* @1, i64 0, i64 0), i64 7, i1 true)
+  %2 = extractvalue { i8*, i64, i64 } %1, 0
+  %3 = extractvalue { i8*, i64, i64 } %1, 1
+  %4 = extractvalue { i8*, i64, i64 } %1, 2
+  %._core = getelementptr inbounds %SS* %0, i32 0, i32 0
+  %._core._baseAddress = getelementptr inbounds %VSs11_StringCore* %._core, i32 0, i32 0
+  %._core._baseAddress._rawValue = getelementptr inbounds %VSs14COpaquePointer* %._core._baseAddress, i32 0, i32 0
+  store i8* %2, i8** %._core._baseAddress._rawValue, align 8
+  %._core._countAndFlags = getelementptr inbounds %VSs11_StringCore* %._core, i32 0, i32 1
+  %._core._countAndFlags.value = getelementptr inbounds %Su* %._core._countAndFlags, i32 0, i32 0
+  store i64 %3, i64* %._core._countAndFlags.value, align 8
+  %._core._owner = getelementptr inbounds %VSs11_StringCore* %._core, i32 0, i32 2
+  %5 = bitcast %Sq* %._core._owner to i64*
+  store i64 %4, i64* %5, align 8
+  %6 = bitcast %SS* %0 to %swift.opaque*
+  call void @_TFSs7printlnU__FQ_T_(%swift.opaque* %6, %swift.type* getelementptr inbounds (%swift.full_type* @_TMdSS, i32 0, i32 1))
+  ret void
+}
+
+attributes #0 = { noinline }
+
+!llvm.module.flags = !{!0, !1, !2, !5, !6, !7, !8, !9}
+
+!0 = metadata !{i32 2, metadata !"Dwarf Version", i32 3}
+!1 = metadata !{i32 1, metadata !"Debug Info Version", i32 1}
+!2 = metadata !{i32 6, metadata !"Linker Options", metadata !3}
+!3 = metadata !{metadata !4}
+!4 = metadata !{metadata !"-lswiftCore"}
+!5 = metadata !{i32 1, metadata !"Objective-C Version", i32 2}
+!6 = metadata !{i32 1, metadata !"Swift Version", i32 2}
+!7 = metadata !{i32 1, metadata !"Objective-C Image Info Version", i32 0}
+!8 = metadata !{i32 1, metadata !"Objective-C Image Info Section", metadata !"__DATA, __objc_imageinfo, regular, no_dead_strip"}
+!9 = metadata !{i32 4, metadata !"Objective-C Garbage Collection", i32 512}

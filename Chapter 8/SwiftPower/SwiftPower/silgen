@@ -1,0 +1,64 @@
+sil_stage raw
+
+import Builtin
+import Swift
+import SwiftShims
+
+// main
+sil @main : $@cc(cdecl) @thin (Int32, UnsafeMutablePointer<UnsafeMutablePointer<Int8>>) -> Int32 {
+bb0(%0 : $Int32, %1 : $UnsafeMutablePointer<UnsafeMutablePointer<Int8>>):
+  // function_ref Swift._didEnterMain (Swift.Int32, Swift.UnsafeMutablePointer<Swift.UnsafeMutablePointer<Swift.Int8>>) -> ()
+  %2 = function_ref @_TFSs13_didEnterMainFTVSs5Int32GVSs20UnsafeMutablePointerGS0_VSs4Int8___T_ : $@thin (Int32, UnsafeMutablePointer<UnsafeMutablePointer<Int8>>) -> () // user: %3
+  %3 = apply [transparent] %2(%0, %1) : $@thin (Int32, UnsafeMutablePointer<UnsafeMutablePointer<Int8>>) -> ()
+  // function_ref Swift.println <A>(A) -> ()
+  %4 = function_ref @_TFSs7printlnU__FQ_T_ : $@thin <τ_0_0> (@in τ_0_0) -> () // user: %13
+  // function_ref Swift.String.init (Swift.String.Type)(_builtinStringLiteral : Builtin.RawPointer, byteSize : Builtin.Word, isASCII : Builtin.Int1) -> Swift.String
+  %5 = function_ref @_TFSSCfMSSFT21_builtinStringLiteralBp8byteSizeBw7isASCIIBi1__SS : $@thin (Builtin.RawPointer, Builtin.Word, Builtin.Int1, @thin String.Type) -> @owned String // user: %10
+  %6 = metatype $@thin String.Type                // user: %10
+  %7 = string_literal utf8 "Hello World"          // user: %10
+  %8 = integer_literal $Builtin.Word, 11          // user: %10
+  %9 = integer_literal $Builtin.Int1, -1          // user: %10
+  %10 = apply %5(%7, %8, %9, %6) : $@thin (Builtin.RawPointer, Builtin.Word, Builtin.Int1, @thin String.Type) -> @owned String // user: %12
+  %11 = alloc_stack $String                       // users: %12, %13, %14
+  store %10 to %11#1 : $*String                   // id: %12
+  %13 = apply %4<String>(%11#1) : $@thin <τ_0_0> (@in τ_0_0) -> ()
+  dealloc_stack %11#0 : $*@local_storage String   // id: %14
+  // function_ref silgen.bye () -> ()
+  %15 = function_ref @_TF6silgen3byeFT_T_ : $@thin () -> () // user: %16
+  %16 = apply %15() : $@thin () -> ()
+  %17 = integer_literal $Builtin.Int32, 0         // user: %18
+  %18 = struct $Int32 (%17 : $Builtin.Int32)      // user: %19
+  return %18 : $Int32                             // id: %19
+}
+
+// Swift._didEnterMain (Swift.Int32, Swift.UnsafeMutablePointer<Swift.UnsafeMutablePointer<Swift.Int8>>) -> ()
+sil [transparent] [fragile] @_TFSs13_didEnterMainFTVSs5Int32GVSs20UnsafeMutablePointerGS0_VSs4Int8___T_ : $@thin (Int32, UnsafeMutablePointer<UnsafeMutablePointer<Int8>>) -> ()
+
+// silgen.bye () -> ()
+sil hidden @_TF6silgen3byeFT_T_ : $@thin () -> () {
+bb0:
+  // function_ref Swift.println <A>(A) -> ()
+  %0 = function_ref @_TFSs7printlnU__FQ_T_ : $@thin <τ_0_0> (@in τ_0_0) -> () // user: %9
+  // function_ref Swift.String.init (Swift.String.Type)(_builtinStringLiteral : Builtin.RawPointer, byteSize : Builtin.Word, isASCII : Builtin.Int1) -> Swift.String
+  %1 = function_ref @_TFSSCfMSSFT21_builtinStringLiteralBp8byteSizeBw7isASCIIBi1__SS : $@thin (Builtin.RawPointer, Builtin.Word, Builtin.Int1, @thin String.Type) -> @owned String // user: %6
+  %2 = metatype $@thin String.Type                // user: %6
+  %3 = string_literal utf8 "Bye bye"              // user: %6
+  %4 = integer_literal $Builtin.Word, 7           // user: %6
+  %5 = integer_literal $Builtin.Int1, -1          // user: %6
+  %6 = apply %1(%3, %4, %5, %2) : $@thin (Builtin.RawPointer, Builtin.Word, Builtin.Int1, @thin String.Type) -> @owned String // user: %8
+  %7 = alloc_stack $String                        // users: %8, %9, %10
+  store %6 to %7#1 : $*String                     // id: %8
+  %9 = apply %0<String>(%7#1) : $@thin <τ_0_0> (@in τ_0_0) -> ()
+  dealloc_stack %7#0 : $*@local_storage String    // id: %10
+  %11 = tuple ()                                  // user: %12
+  return %11 : $()                                // id: %12
+}
+
+// Swift.println <A>(A) -> ()
+sil [noinline] [semantics "stdlib_binary_only"] @_TFSs7printlnU__FQ_T_ : $@thin <τ_0_0> (@in τ_0_0) -> ()
+
+// Swift.String.init (Swift.String.Type)(_builtinStringLiteral : Builtin.RawPointer, byteSize : Builtin.Word, isASCII : Builtin.Int1) -> Swift.String
+sil [readonly] [semantics "string.makeUTF8"] @_TFSSCfMSSFT21_builtinStringLiteralBp8byteSizeBw7isASCIIBi1__SS : $@thin (Builtin.RawPointer, Builtin.Word, Builtin.Int1, @thin String.Type) -> @owned String
+
+
+

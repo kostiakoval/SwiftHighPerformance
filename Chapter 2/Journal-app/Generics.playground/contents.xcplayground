@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' requires-full-environment='true' display-mode='rendered' last-migration='0700'>
+    <pages>
+        <page name='TOC'/>
+        <page name='Intro to Generics'/>
+        <page name='Generic Functions'/>
+        <page name='Type constraints'/>
+        <page name='Journal minElem'/>
+        <page name='Generic Type'/>
+        <page name='Custom Generic type'/>
+    </pages>
+</playground>

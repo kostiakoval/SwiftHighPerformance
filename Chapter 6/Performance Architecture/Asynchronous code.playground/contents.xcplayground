@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' requires-full-environment='true' display-mode='rendered'>
+    <pages>
+        <page name='TOC'/>
+        <page name='Asynchronous code'/>
+        <page name='Completion callback'/>
+        <page name='Callback on Main Thread'/>
+        <page name='Retrun result'/>
+    </pages>
+</playground>

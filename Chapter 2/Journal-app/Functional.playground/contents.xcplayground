@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' requires-full-environment='true' display-mode='rendered' last-migration='0700'>
+    <pages>
+        <page name='Template'/>
+        <page name='TOC'/>
+        <page name='Function Type'/>
+        <page name='Splitting code - Imperative'/>
+        <page name='Splitting code - Functional'/>
+        <page name='Closures'/>
+        <page name='Standard Library'/>
+    </pages>
+</playground>

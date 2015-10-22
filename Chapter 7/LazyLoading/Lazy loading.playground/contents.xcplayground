@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' requires-full-environment='true' display-mode='rendered'>
+    <pages>
+        <page name='TOC'/>
+        <page name='Global variables'/>
+        <page name='Type properties'/>
+        <page name='Lazy properties'/>
+        <page name='Optional Lazy properties'/>
+        <page name='Lazy Loading cache'/>
+        <page name='Computed properties'/>
+    </pages>
+</playground>

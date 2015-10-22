@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' requires-full-environment='true' display-mode='rendered' last-migration='0700'>
+    <pages>
+        <page name='Template'/>
+        <page name='TOC'/>
+        <page name='Map'/>
+        <page name='Optional map'/>
+        <page name='Reduce'/>
+        <page name='Filter'/>
+        <page name='FlatMap'/>
+        <page name='All'/>
+    </pages>
+</playground>

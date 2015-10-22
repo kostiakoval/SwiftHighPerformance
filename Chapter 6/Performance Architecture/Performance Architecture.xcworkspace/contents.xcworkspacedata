@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:Threads.playground">
+   </FileRef>
+   <FileRef
+      location = "group:GCD - Grand Central Dispatch.playground">
+   </FileRef>
+   <FileRef
+      location = "group:NSOperationQueue.playground">
+   </FileRef>
+   <FileRef
+      location = "group:Asynchronous code.playground">
+   </FileRef>
+   <FileRef
+      location = "group:Avoiding State.playground">
+   </FileRef>
+   <FileRef
+      location = "group:Divide and Conquer.playground">
+   </FileRef>
+   <FileRef
+      location = "group:Controlling lifetime.playground">
+   </FileRef>
+</Workspace>

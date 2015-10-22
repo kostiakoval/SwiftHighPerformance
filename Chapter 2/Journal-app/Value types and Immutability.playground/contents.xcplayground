@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' requires-full-environment='true' display-mode='rendered'>
+    <pages>
+        <page name='Template'/>
+        <page name='TOC'/>
+        <page name='Reference type'/>
+        <page name='Value types'/>
+        <page name='Representing state with Classes'/>
+    </pages>
+</playground>

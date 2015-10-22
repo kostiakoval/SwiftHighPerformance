@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='osx' requires-full-environment='true' display-mode='rendered'>
+    <pages>
+        <page name='TOC'/>
+        <page name='Collection Map'/>
+        <page name='Map Lazy'/>
+        <page name='Sequence'/>
+        <page name='Custom Sequence'/>
+        <page name='Custom Collection'/>
+        <page name='Lazy Sequence'/>
+        <page name='Lazy Collection'/>
+        <page name='Lazy Map with state'/>
+        <page name='Lazy Map no state'/>
+    </pages>
+</playground>

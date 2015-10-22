@@ -1,0 +1,116 @@
+sil_stage canonical
+
+import Builtin
+import Swift
+import SwiftShims
+
+// globalinit_33_1BDF70FFC18749BAB495A73B459ED2F0_token4
+sil_global private_external [fragile] @globalinit_33_1BDF70FFC18749BAB495A73B459ED2F0_token4 : $Builtin.Word
+
+// static Swift.Process._argc : Swift.Int32
+sil_global [fragile] @_TZvOSs7Process5_argcVSs5Int32 : $Int32
+
+// globalinit_33_1BDF70FFC18749BAB495A73B459ED2F0_token5
+sil_global private_external [fragile] @globalinit_33_1BDF70FFC18749BAB495A73B459ED2F0_token5 : $Builtin.Word
+
+// static Swift.Process._unsafeArgv : Swift.UnsafeMutablePointer<Swift.UnsafeMutablePointer<Swift.Int8>>
+sil_global [fragile] @_TZvOSs7Process11_unsafeArgvGVSs20UnsafeMutablePointerGS0_VSs4Int8__ : $UnsafeMutablePointer<UnsafeMutablePointer<Int8>>
+
+// main
+sil @main : $@cc(cdecl) @thin (Int32, UnsafeMutablePointer<UnsafeMutablePointer<Int8>>) -> Int32 {
+bb0(%0 : $Int32, %1 : $UnsafeMutablePointer<UnsafeMutablePointer<Int8>>):
+  %2 = global_addr @globalinit_33_1BDF70FFC18749BAB495A73B459ED2F0_token4 : $*Builtin.Word // user: %3
+  %3 = address_to_pointer %2 : $*Builtin.Word to $Builtin.RawPointer // user: %6
+  // function_ref globalinit_33_1BDF70FFC18749BAB495A73B459ED2F0_func4
+  %4 = function_ref @globalinit_33_1BDF70FFC18749BAB495A73B459ED2F0_func4 : $@thin () -> () // user: %5
+  %5 = thin_to_thick_function %4 : $@thin () -> () to $@callee_owned () -> () // user: %6
+  %6 = builtin "once"(%3 : $Builtin.RawPointer, %5 : $@callee_owned () -> ()) : $()
+  %7 = global_addr @_TZvOSs7Process5_argcVSs5Int32 : $*Int32 // user: %8
+  store %0 to %7 : $*Int32                        // id: %8
+  %9 = global_addr @globalinit_33_1BDF70FFC18749BAB495A73B459ED2F0_token5 : $*Builtin.Word // user: %10
+  %10 = address_to_pointer %9 : $*Builtin.Word to $Builtin.RawPointer // user: %13
+  // function_ref globalinit_33_1BDF70FFC18749BAB495A73B459ED2F0_func5
+  %11 = function_ref @globalinit_33_1BDF70FFC18749BAB495A73B459ED2F0_func5 : $@thin () -> () // user: %12
+  %12 = thin_to_thick_function %11 : $@thin () -> () to $@callee_owned () -> () // user: %13
+  %13 = builtin "once"(%10 : $Builtin.RawPointer, %12 : $@callee_owned () -> ()) : $()
+  %14 = global_addr @_TZvOSs7Process11_unsafeArgvGVSs20UnsafeMutablePointerGS0_VSs4Int8__ : $*UnsafeMutablePointer<UnsafeMutablePointer<Int8>> // user: %15
+  store %1 to %14 : $*UnsafeMutablePointer<UnsafeMutablePointer<Int8>> // id: %15
+  %16 = tuple ()
+  // function_ref Swift.println <A>(A) -> ()
+  %17 = function_ref @_TFSs7printlnU__FQ_T_ : $@thin <τ_0_0> (@in τ_0_0) -> () // user: %26
+  // function_ref Swift.String.init (Swift.String.Type)(_builtinStringLiteral : Builtin.RawPointer, byteSize : Builtin.Word, isASCII : Builtin.Int1) -> Swift.String
+  %18 = function_ref @_TFSSCfMSSFT21_builtinStringLiteralBp8byteSizeBw7isASCIIBi1__SS : $@thin (Builtin.RawPointer, Builtin.Word, Builtin.Int1, @thin String.Type) -> @owned String // user: %23
+  %19 = metatype $@thin String.Type               // user: %23
+  %20 = string_literal utf8 "Hello World"         // user: %23
+  %21 = integer_literal $Builtin.Word, 11         // user: %23
+  %22 = integer_literal $Builtin.Int1, -1         // user: %23
+  %23 = apply %18(%20, %21, %22, %19) : $@thin (Builtin.RawPointer, Builtin.Word, Builtin.Int1, @thin String.Type) -> @owned String // user: %25
+  %24 = alloc_stack $String                       // users: %25, %26, %27
+  store %23 to %24#1 : $*String                   // id: %25
+  %26 = apply %17<String>(%24#1) : $@thin <τ_0_0> (@in τ_0_0) -> ()
+  dealloc_stack %24#0 : $*@local_storage String   // id: %27
+  // function_ref sil.bye () -> ()
+  %28 = function_ref @_TF3sil3byeFT_T_ : $@thin () -> () // user: %29
+  %29 = apply %28() : $@thin () -> ()
+  %30 = integer_literal $Builtin.Int32, 0         // user: %31
+  %31 = struct $Int32 (%30 : $Builtin.Int32)      // user: %32
+  return %31 : $Int32                             // id: %32
+}
+
+// Swift._didEnterMain (Swift.Int32, Swift.UnsafeMutablePointer<Swift.UnsafeMutablePointer<Swift.Int8>>) -> ()
+sil public_external [transparent] [fragile] @_TFSs13_didEnterMainFTVSs5Int32GVSs20UnsafeMutablePointerGS0_VSs4Int8___T_ : $@thin (Int32, UnsafeMutablePointer<UnsafeMutablePointer<Int8>>) -> () {
+bb0(%0 : $Int32, %1 : $UnsafeMutablePointer<UnsafeMutablePointer<Int8>>):
+  %2 = global_addr @globalinit_33_1BDF70FFC18749BAB495A73B459ED2F0_token4 : $*Builtin.Word // user: %3
+  %3 = address_to_pointer %2 : $*Builtin.Word to $Builtin.RawPointer // user: %6
+  // function_ref globalinit_33_1BDF70FFC18749BAB495A73B459ED2F0_func4
+  %4 = function_ref @globalinit_33_1BDF70FFC18749BAB495A73B459ED2F0_func4 : $@thin () -> () // user: %5
+  %5 = thin_to_thick_function %4 : $@thin () -> () to $@callee_owned () -> () // user: %6
+  %6 = builtin "once"(%3 : $Builtin.RawPointer, %5 : $@callee_owned () -> ()) : $()
+  %7 = global_addr @_TZvOSs7Process5_argcVSs5Int32 : $*Int32 // user: %8
+  store %0 to %7 : $*Int32                        // id: %8
+  %9 = global_addr @globalinit_33_1BDF70FFC18749BAB495A73B459ED2F0_token5 : $*Builtin.Word // user: %10
+  %10 = address_to_pointer %9 : $*Builtin.Word to $Builtin.RawPointer // user: %13
+  // function_ref globalinit_33_1BDF70FFC18749BAB495A73B459ED2F0_func5
+  %11 = function_ref @globalinit_33_1BDF70FFC18749BAB495A73B459ED2F0_func5 : $@thin () -> () // user: %12
+  %12 = thin_to_thick_function %11 : $@thin () -> () to $@callee_owned () -> () // user: %13
+  %13 = builtin "once"(%10 : $Builtin.RawPointer, %12 : $@callee_owned () -> ()) : $()
+  %14 = global_addr @_TZvOSs7Process11_unsafeArgvGVSs20UnsafeMutablePointerGS0_VSs4Int8__ : $*UnsafeMutablePointer<UnsafeMutablePointer<Int8>> // user: %15
+  store %1 to %14 : $*UnsafeMutablePointer<UnsafeMutablePointer<Int8>> // id: %15
+  %16 = tuple ()                                  // user: %17
+  return %16 : $()                                // id: %17
+}
+
+// sil.bye () -> ()
+sil hidden @_TF3sil3byeFT_T_ : $@thin () -> () {
+bb0:
+  // function_ref Swift.println <A>(A) -> ()
+  %0 = function_ref @_TFSs7printlnU__FQ_T_ : $@thin <τ_0_0> (@in τ_0_0) -> () // user: %9
+  // function_ref Swift.String.init (Swift.String.Type)(_builtinStringLiteral : Builtin.RawPointer, byteSize : Builtin.Word, isASCII : Builtin.Int1) -> Swift.String
+  %1 = function_ref @_TFSSCfMSSFT21_builtinStringLiteralBp8byteSizeBw7isASCIIBi1__SS : $@thin (Builtin.RawPointer, Builtin.Word, Builtin.Int1, @thin String.Type) -> @owned String // user: %6
+  %2 = metatype $@thin String.Type                // user: %6
+  %3 = string_literal utf8 "Bye bye"              // user: %6
+  %4 = integer_literal $Builtin.Word, 7           // user: %6
+  %5 = integer_literal $Builtin.Int1, -1          // user: %6
+  %6 = apply %1(%3, %4, %5, %2) : $@thin (Builtin.RawPointer, Builtin.Word, Builtin.Int1, @thin String.Type) -> @owned String // user: %8
+  %7 = alloc_stack $String                        // users: %8, %9, %10
+  store %6 to %7#1 : $*String                     // id: %8
+  %9 = apply %0<String>(%7#1) : $@thin <τ_0_0> (@in τ_0_0) -> ()
+  dealloc_stack %7#0 : $*@local_storage String    // id: %10
+  %11 = tuple ()                                  // user: %12
+  return %11 : $()                                // id: %12
+}
+
+// Swift.println <A>(A) -> ()
+sil [noinline] [semantics "stdlib_binary_only"] @_TFSs7printlnU__FQ_T_ : $@thin <τ_0_0> (@in τ_0_0) -> ()
+
+// Swift.String.init (Swift.String.Type)(_builtinStringLiteral : Builtin.RawPointer, byteSize : Builtin.Word, isASCII : Builtin.Int1) -> Swift.String
+sil [readonly] [semantics "string.makeUTF8"] @_TFSSCfMSSFT21_builtinStringLiteralBp8byteSizeBw7isASCIIBi1__SS : $@thin (Builtin.RawPointer, Builtin.Word, Builtin.Int1, @thin String.Type) -> @owned String
+
+// globalinit_33_1BDF70FFC18749BAB495A73B459ED2F0_func4
+sil private_external [fragile] @globalinit_33_1BDF70FFC18749BAB495A73B459ED2F0_func4 : $@thin () -> ()
+
+// globalinit_33_1BDF70FFC18749BAB495A73B459ED2F0_func5
+sil private_external [fragile] @globalinit_33_1BDF70FFC18749BAB495A73B459ED2F0_func5 : $@thin () -> ()
+
+
+

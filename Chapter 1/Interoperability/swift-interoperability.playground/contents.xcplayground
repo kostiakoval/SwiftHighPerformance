@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' requires-full-environment='true' display-mode='rendered' last-migration='0700'>
+    <pages>
+        <page name='TOC'/>
+        <page name='Cocoa Frameworks'/>
+        <page name='Swift - Objc Type bridging'/>
+        <page name='Objc - Swift Type bridging'/>
+        <page name='String Foundation bridging'/>
+        <page name='Swifty API'/>
+        <page name='Custom Types'/>
+    </pages>
+</playground>

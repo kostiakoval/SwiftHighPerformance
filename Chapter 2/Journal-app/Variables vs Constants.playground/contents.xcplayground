@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' requires-full-environment='true' display-mode='rendered' last-migration='0700'>
+    <pages>
+        <page name='TOC'/>
+        <page name='Variable and Constant'/>
+        <page name='Person and Journal with constants'/>
+        <page name='Using Variables - wrong example'/>
+        <page name='Using constant - correct'/>
+        <page name='Template'/>
+        <page name='All'/>
+    </pages>
+</playground>
